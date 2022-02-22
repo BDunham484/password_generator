@@ -6,15 +6,16 @@ var options = function() {
   // if (passwordLength) {
   //   window.alert("You have selected your password to be " + passwordLength + " characters long.")
   // }
-while (passwordLength < 8 || passwordLength > 128) {
+  while (passwordLength < 8 || passwordLength > 128) {
     window.prompt("Please enter a value between 8 and 128.")
+  } 
     if (passwordLength === "" || passwordLength === null) {
     window.prompt("Please enter a value between 8 and 128.")
     } else {
     window.alert("You have selected your password to be " + passwordLength + " characters long.")
     break;
     }
-}
+
   
   // create variable with prompt to confirm lowercase letters for password with confirmation message
   var typeLowercase = window.confirm("Would you like to include lowercase letters");
