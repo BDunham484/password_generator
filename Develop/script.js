@@ -3,21 +3,20 @@
 var options = function() {
   //create variable with prompt to determine password length with confirmation message
   var passwordLength = window.prompt("How long would you like your password to be?  Please enter a number between 8 and 128.")
-  // if (passwordLength) {
-  //   window.alert("You have selected your password to be " + passwordLength + " characters long.")
-  // }
-  while (passwordLength < 8 || passwordLength > 128) {
-    window.prompt("Please enter a value between 8 and 128.")
-  } 
-    if (passwordLength === "" || passwordLength === null) {
-    window.prompt("Please enter a value between 8 and 128.")
-    } else {
-    window.alert("You have selected your password to be " + passwordLength + " characters long.")
-    break;
-    }
-
   
-  // create variable with prompt to confirm lowercase letters for password with confirmation message
+if (passwordLength >= 8 && passwordLength <= 128) {
+  window.alert("You have selected your password to be " + passwordLength + " characters long.")
+} else if (passwordLength < 8 || passwordLength > 128) {
+  window.alert("Invalid Entry.  Try Again.");
+  return options();
+} else if (passwordLength === "" || passwordLength === null) {
+  window.alert("Invalid Entry.  Try Again.");
+  return options();
+} else {
+  return options()
+};
+
+// create variable with prompt to confirm lowercase letters for password with confirmation message
   var typeLowercase = window.confirm("Would you like to include lowercase letters");
   if (typeLowercase) {
     window.alert("You have selected lowercase letters.");
