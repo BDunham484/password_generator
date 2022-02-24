@@ -2,7 +2,7 @@
 
 My completed password generator challenge.
 
-![My Portfolio](./Develop/images/password-screenshot.png)
+![My Portfolio](./assets/images/password-screenshot.png)
 
 ## Made With:
 
