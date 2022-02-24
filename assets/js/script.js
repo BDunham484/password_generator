@@ -65,6 +65,11 @@ var generatePassword = function() {
   } else {
     window.alert("There will be no special characters.");
   }
+
+  if (!typeLowercase && !typeUppercase && !typeNumeric && !typeSpecial){
+    window.alert("You must pick at least 1 type of character! Please try again.")
+    return generatePassword();
+  }
   // creates and ranomizes password  
   for (var i = 0; i < passwordLength; i++) {
     arrLength = mixedChars.length;
