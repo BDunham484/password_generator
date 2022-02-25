@@ -6,8 +6,6 @@ var special = ["!", "'", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", 
 var mixedChars = [];
 var passwordArr = [];
 
-
-
 // create function to ask user for password generatePassword
 var generatePassword = function() {
   //create variable with prompt to determine password length with confirmation message
@@ -15,14 +13,17 @@ var generatePassword = function() {
 
   if (passwordLength >= 8 && passwordLength <= 128) {
     window.alert("You have selected your password to be " + passwordLength + " characters long.")
+  } else if (passwordLength === "") {
+    window.alert("Invalid Entry.  Try Again.");
+    return generatePassword();
+  } else if (passwordLength === null) {
+    return generatePassword();
   } else if (passwordLength < 8 || passwordLength > 128) {
     window.alert("Invalid Entry.  Try Again.");
     return generatePassword();
-  } else if (passwordLength === "" || passwordLength === null) {
-    window.alert("Invalid Entry.  Try Again.");
-    return generatePassword();
   } else {
-    return generatePassword()
+    window.alert("Invalid Entry.  Try Again.")
+    return generatePassword();
   };
 
   // create variable with prompt to confirm lowercase letters for password with confirmation message and push to mixedChars if true.
@@ -91,9 +92,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
+ // generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
 
-// Add event listener to generate button
 
-generateBtn.addEventListener("click", writePassword);
