@@ -8,6 +8,8 @@ var passwordArr = [];
 
 // create function to ask user for password generatePassword
 var generatePassword = function() {
+  var passwordText = document.querySelector("#password");
+  passwordText.value = "";
   //create variable with prompt to determine password length with confirmation message
   var passwordLength = window.prompt("How long would you like your password to be?  Please enter a number between 8 and 128.")
 
@@ -71,6 +73,8 @@ var generatePassword = function() {
     window.alert("You must pick at least 1 type of character! Please try again.")
     return generatePassword();
   }
+  //clears the password array
+  var passwordArr = [];
   // creates and ranomizes password  
   for (var i = 0; i < passwordLength; i++) {
     arrLength = mixedChars.length;
@@ -91,8 +95,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  
+
   passwordText.value = password;
 }
+
  // generateBtn.addEventListener("click", writePassword);
 generateBtn.addEventListener("click", writePassword)
 
