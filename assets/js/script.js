@@ -1,9 +1,10 @@
-// Assignment code here
+//create arrays to draw characters from
 var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var alph = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var special = ["!", "'", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]
-
+//create array to fill with selected characters
 var mixedChars = [];
+//create array to fill with random chars from mixedChars array
 var passwordArr = [];
 
 // create function to ask user for password generatePassword
@@ -94,9 +95,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  
-
   passwordText.value = password;
 }
 
